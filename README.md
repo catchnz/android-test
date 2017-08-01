@@ -1,13 +1,13 @@
-# iOS Developer Test
+# Android Developer Test
 
-A simple test for iOS Developers
+A simple test for Android Developers
 
 ## Instructions
 
 1. Fork or clone this repo
-2. Create an iOS project
+2. Create an Android project
 3. Use the design located in the design folder
-4. Make the app load the json file remotely from this repo (i.e. `https://raw.githubusercontent.com/catchnz/ios-test/master/data/data.json`) as per the design
+4. Make the app load the json file remotely from this repo (i.e. `https://raw.githubusercontent.com/catchnz/android-test/master/data/data.json`) as per the design
 5. Display the data as per the design
 6. Create a pull request or email us at dev@catch.co.nz
 
@@ -18,5 +18,5 @@ A simple test for iOS Developers
 
 ### Bonus Points
 
-* Consume dependencies with tools like cocoapods
+* Consume dependencies with tools like Maven
 * Unit tests
