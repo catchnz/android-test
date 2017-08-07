@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
         <variable
             name="viewModel"
-            type="com.vsossella.mvvmapp.ui.team.model.Team" />
+            type="com.vsossella.mvvmapp.ui.book.model.Book" />
     </data>
 
     <LinearLayout
-        android:gravity="center_vertical"
-        android:orientation="vertical"
+        android:id="@+id/item_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/cell_height"
         android:layout_marginLeft="@dimen/default_margin"
-        android:layout_marginRight="@dimen/default_margin">
+        android:layout_marginRight="@dimen/default_margin"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{viewModel.title}"
             android:textColor="@color/colorPrimary"
-            tools:text="Grêmio"
-            android:textStyle="bold"
             android:textSize="@dimen/default_bigger_text_size"
-            android:text="@{viewModel.teamName}"/>
+            android:textStyle="bold"
+            tools:text="Grêmio" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Porto Alegre"
+            android:text="@{viewModel.subtitle}"
             android:textSize="@dimen/default_small_text_size"
-            android:text="@{viewModel.city}"/>
+            tools:text="Porto Alegre" />
 
     </LinearLayout>
 

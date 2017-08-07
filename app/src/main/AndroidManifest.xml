@@ -14,13 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
-        <activity android:name="com.vsossella.mvvmapp.ui.team.view.TeamActivity">
+        <activity android:name="com.vsossella.mvvmapp.ui.book.view.BookActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.bookdetail.view.BookDetailActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

@@ -16,7 +16,7 @@ android {
     }
     defaultConfig {
         applicationId "com.vsossella.mvvmapp"
-        minSdkVersion 24
+        minSdkVersion 17
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -25,12 +25,14 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            resValue RES_VALUE_STRING, API_BASE_URL, "https://private-126316-apitest108.apiary-mock.com/"
+//            resValue RES_VALUE_STRING, API_BASE_URL, "https://private-126316-apitest108.apiary-mock.com/"
+            resValue RES_VALUE_STRING, API_BASE_URL, "https://raw.githubusercontent.com/catchnz/android-test/master/data/"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
-            resValue RES_VALUE_STRING, API_BASE_URL, "https://private-126316-apitest108.apiary-mock.com/"
+//            resValue RES_VALUE_STRING, API_BASE_URL, "https://private-126316-apitest108.apiary-mock.com/"
+            resValue RES_VALUE_STRING, API_BASE_URL, "https://raw.githubusercontent.com/catchnz/android-test/master/data/"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

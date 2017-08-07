@@ -1,10 +1,10 @@
-package com.vsossella.mvvmapp.ui.team.interaction;
+package com.vsossella.mvvmapp.ui.book.interaction;
 
 /**
  * Created by vsossella on 26/06/17.
  */
 
-public interface TeamActivityInteraction {
+public interface BookActivityInteraction {
 
     void showLoading();
     void hideLoading();

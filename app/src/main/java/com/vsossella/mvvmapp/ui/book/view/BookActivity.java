@@ -1,17 +1,18 @@
-package com.vsossella.mvvmapp.ui.team.view;
+package com.vsossella.mvvmapp.ui.book.view;
 
 import android.app.ProgressDialog;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.vsossella.mvvmapp.MainApplication;
 import com.vsossella.mvvmapp.R;
-import com.vsossella.mvvmapp.databinding.TeamActivityBinding;
-import com.vsossella.mvvmapp.ui.team.interaction.TeamActivityInteraction;
-import com.vsossella.mvvmapp.ui.team.viewmodel.TeamViewModel;
+import com.vsossella.mvvmapp.databinding.BookActivityBinding;
+import com.vsossella.mvvmapp.ui.book.interaction.BookActivityInteraction;
+import com.vsossella.mvvmapp.ui.book.viewmodel.BookViewModel;
 
 import javax.inject.Inject;
 
@@ -19,11 +20,13 @@ import javax.inject.Inject;
  * Created by vsossella on 26/06/17.
  */
 
-public class TeamActivity extends AppCompatActivity implements TeamActivityInteraction {
+public class BookActivity extends AppCompatActivity
+        implements BookActivityInteraction,
+        SwipeRefreshLayout.OnRefreshListener {
 
     @Inject
-    TeamViewModel teamViewModel;
-    TeamActivityBinding binding;
+    BookViewModel bookViewModel;
+    BookActivityBinding binding;
     ProgressDialog progress;
 
     @Override
@@ -31,12 +34,17 @@ public class TeamActivity extends AppCompatActivity implements TeamActivityInter
         super.onCreate(savedInstanceState);
         injectDependencies();
         progress = new ProgressDialog(this);
-        teamViewModel.setInteraction(this);
+        bookViewModel.setInteraction(this);
 
-        binding = DataBindingUtil.setContentView(this, R.layout.team_activity);
-        teamViewModel.loadTeamsFromAPI();
-        binding.setViewModel(teamViewModel);
+        binding = DataBindingUtil.setContentView(this, R.layout.book_activity);
+        setupSwipeRefresh();
+        bookViewModel.loadBooksFromAPI();
+        binding.setViewModel(bookViewModel);
         setSupportActionBar(binding.toolbar);
+    }
+
+    private void setupSwipeRefresh() {
+        binding.swipeRefresh.setOnRefreshListener(this);
     }
 
     private void injectDependencies() {
@@ -58,5 +66,12 @@ public class TeamActivity extends AppCompatActivity implements TeamActivityInter
     @Override
     public void showToast(String toastMessage) {
         Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRefresh() {
+        bookViewModel.loadBooksFromAPI();
+        showToast("Swiped");
+        binding.swipeRefresh.setRefreshing(false);
     }
 }
