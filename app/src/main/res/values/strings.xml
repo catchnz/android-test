@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">JsonList</string>
+    <string name="json_url">https://raw.githubusercontent.com/catchnz/android-test/master/data/data.json</string>
+</resources>
