@@ -20,11 +20,21 @@ public class NetworkHandler {
     private final String TAG = "NetworkHandler";
     private RequestQueue queue;
 
+    /**
+     * Simple constructor which takes Context and creates a Queue
+     * @param c the Context to be used
+     */
     //TODO: move to singleton
     public NetworkHandler(Context c) {
         queue = Volley.newRequestQueue(c);
     }
 
+    /**
+     * Makes the network request via Volley and returns a JSONArray via a callback
+     *
+     * @param url The URL to make the request to
+     * @param responseListener The callback to call once we have a result
+     */
     public void makeRequest(String url, final OnResponseListener responseListener) {
         JsonArrayRequest jsonRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {

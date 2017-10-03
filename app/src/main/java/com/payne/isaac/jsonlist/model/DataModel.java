@@ -11,6 +11,13 @@ public class DataModel {
     private String subtitle;
     private String content;
 
+    /**
+     *  Simple class to represent the data coming from the JSON API
+     * @param id The ID of the article
+     * @param title The title of the article
+     * @param subtitle The subtitle of the article
+     * @param content The content of the article
+     */
     public DataModel(int id, String title, String subtitle, String content) {
         this.id = id;
         this.title = title;

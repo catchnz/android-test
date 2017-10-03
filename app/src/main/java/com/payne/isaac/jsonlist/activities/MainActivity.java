@@ -37,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
         setupUi();
     }
 
+    /**
+     * Sets up the main UI elements, the ListView and SwipeRefreshLayout
+     *
+     * We need to set our adapter and the OnItemClickListener for our ListView.
+     * For the SwipeRefreshLayout we need to set the OnRefreshListener
+     */
     private void setupUi() {
         mDataListAdapter = new DataListAdapter(this, mDataList);
 
@@ -61,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Makes a network request via the Network helper and updates the UI with the result
+     */
     private void makeRequest(String url) {
         networkHandler.makeRequest(url,
                 new NetworkHandler.OnResponseListener() {
@@ -83,12 +92,23 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    /**
+     * Called when an item from the ListView is selected,
+     * This will start the ViewDetailActivity and pass an intent with the content
+     * to be displayed.
+     *
+     * @param pos The position of the selected item
+     */
     private void handleItemSelect(int pos) {
         Intent mIntent = new Intent(this, ViewDetailActivity.class);
         mIntent.putExtra("content", mDataList.get(pos).getContent());
         startActivity(mIntent);
     }
 
+    /**
+     * Shows a simple Toast message
+     * @param message The error to me displayed ot the user
+     */
     private void showError(String message){
         Toast.makeText(this, "Error retrieving data: " + message, Toast.LENGTH_LONG).show();
     }

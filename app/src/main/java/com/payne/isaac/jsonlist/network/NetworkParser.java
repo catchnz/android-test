@@ -14,6 +14,12 @@ import java.util.ArrayList;
 
 public class NetworkParser {
 
+    /**
+     *  Parses a JSONArray into an ArrayList of DataModels
+     * @param jsonArray The JSONArray to be parse
+     * @return The objects from the JSONArray parsed into an ArrayList<DataModel>
+     * @throws JSONException
+     */
     public static ArrayList<DataModel> parseDataModel(JSONArray jsonArray) throws JSONException {
         ArrayList<DataModel> result = new ArrayList<>();
 
