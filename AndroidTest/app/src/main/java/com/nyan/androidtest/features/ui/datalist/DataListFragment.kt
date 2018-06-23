@@ -1,24 +1,30 @@
-package com.nyan.androidtest.features
+package com.nyan.androidtest.features.ui.datalist
 
 
 import android.os.Bundle
 import android.support.annotation.StringRes
-import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import android.widget.LinearLayout
+import com.dinuscxj.refresh.RecyclerRefreshLayout
+import com.dinuscxj.refresh.RefreshView
 import com.nyan.androidtest.R
 import com.nyan.androidtest.core.exceptions.Failure
+import com.nyan.androidtest.core.extension.dp
 import com.nyan.androidtest.core.extension.failure
 import com.nyan.androidtest.core.extension.observe
 import com.nyan.androidtest.core.extension.viewModel
 import com.nyan.androidtest.core.platform.BaseFragment
-import com.nyan.androidtest.features.models.DataView
+import com.nyan.androidtest.features.ui.DataView
+import com.nyan.androidtest.features.ui.data_details.DetailActivity
+import com.nyan.androidtest.features.viewmodels.DataListViewModel
 import kotlinx.android.synthetic.main.fragment_data_list.*
 import javax.inject.Inject
+import android.widget.RelativeLayout
+import com.nyan.androidtest.R.id.swipeToRefresh
+import com.nyan.androidtest.features.ui.SimpleDividerItemDecoration
 
 
 class DataListFragment : BaseFragment() {
@@ -41,26 +47,31 @@ class DataListFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
+        setupSwipeToRefresh()
+    }
+
+    private fun setupSwipeToRefresh() {
+        swipeToRefresh.setRefreshStyle(RecyclerRefreshLayout.RefreshStyle.PINNED)
+        swipeToRefresh.setRefreshInitialOffset(15.dp);
+        swipeToRefresh.setRefreshTargetOffset(60.dp)
+        swipeToRefresh.setOnRefreshListener { dataListViewModel.loadData() }
     }
 
     private fun renderData(data: List<DataView>?) {
 
         dataListAdapter.collection = data.orEmpty()
-        swipeToRefresh.isRefreshing = false
+        swipeToRefresh.setRefreshing(false)
 
     }
 
     private fun setupRecyclerView() {
-        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.layoutManager = LinearLayoutManager(activity!!)
         recyclerView.adapter = dataListAdapter
         dataListAdapter.clickListener = { data ->
-
-            //Goto city
-            Log.e("Clicked", data.toString())
-
+            startActivity(DetailActivity.callingIntent(activity!!, data))
         }
+        recyclerView.addItemDecoration(SimpleDividerItemDecoration(context!!));
 
-        swipeToRefresh.setOnRefreshListener { dataListViewModel.loadData() }
     }
 
     private fun handleFailure(failure: Failure?) {
@@ -71,7 +82,7 @@ class DataListFragment : BaseFragment() {
     }
 
     private fun renderFailure(@StringRes message: Int) {
-        swipeToRefresh.isRefreshing = false
+        swipeToRefresh.setRefreshing(false)
         Log.e("TAG", "renderFailure ${getString(message)}")
     }
 }

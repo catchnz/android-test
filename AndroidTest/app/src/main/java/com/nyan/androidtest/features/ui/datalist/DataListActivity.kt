@@ -1,10 +1,8 @@
-package com.nyan.androidtest.features
+package com.nyan.androidtest.features.ui.datalist
 
 import android.content.Context
 import android.content.Intent
-import com.nyan.androidtest.R
 import com.nyan.androidtest.core.platform.BaseActivity
-import com.nyan.androidtest.core.platform.BaseFragment
 
 class DataListActivity : BaseActivity() {
     override fun fragment() = DataListFragment()

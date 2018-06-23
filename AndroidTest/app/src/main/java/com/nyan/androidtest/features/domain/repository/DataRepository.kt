@@ -1,9 +1,10 @@
-package com.nyan.androidtest.features
+package com.nyan.androidtest.features.domain.repository
 
 import com.nyan.androidtest.core.exceptions.Failure
 import com.nyan.androidtest.core.functional.Either
-import com.nyan.androidtest.features.models.Data
 import com.nyan.androidtest.core.platform.NetworkHandler
+import com.nyan.androidtest.features.viewmodels.Data
+import com.nyan.androidtest.features.domain.GitHubDataServices
 import retrofit2.Call
 import javax.inject.Inject
 

@@ -1,9 +1,9 @@
 package com.nyan.androidtest
 
 import android.app.Application
-import com.nyan.androidtest.core.di.viewmodel.ApplicationComponent
-import com.nyan.androidtest.core.di.viewmodel.ApplicationModule
-import com.nyan.androidtest.core.di.viewmodel.DaggerApplicationComponent
+import com.nyan.androidtest.core.di.ApplicationComponent
+import com.nyan.androidtest.core.di.ApplicationModule
+import com.nyan.androidtest.core.di.DaggerApplicationComponent
 import com.squareup.leakcanary.LeakCanary
 
 class AndroidApplication : Application() {

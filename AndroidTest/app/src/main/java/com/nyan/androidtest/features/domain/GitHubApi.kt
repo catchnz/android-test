@@ -1,10 +1,9 @@
-package com.nyan.androidtest.features
+package com.nyan.androidtest.features.domain
 
 
-import com.nyan.androidtest.features.models.DataEntity
+import com.nyan.androidtest.features.domain.repository.entity.DataEntity
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Path
 
 internal interface GitHubApi {
     companion object {

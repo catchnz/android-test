@@ -1,7 +1,8 @@
-package com.nyan.androidtest.core.di.viewmodel
+package com.nyan.androidtest.core.di
 
 import com.nyan.androidtest.AndroidApplication
-import com.nyan.androidtest.features.DataListFragment
+import com.nyan.androidtest.core.di.viewmodel.ViewModelModule
+import com.nyan.androidtest.features.ui.datalist.DataListFragment
 import dagger.Component
 import javax.inject.Singleton
 

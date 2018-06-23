@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="dataView"
+            type="com.nyan.androidtest.features.ui.DataView" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:scrollbars="none">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="17sp"
+            android:layout_height="match_parent"
+            android:text="@{dataView.content}" />
+    </ScrollView>
+</layout>

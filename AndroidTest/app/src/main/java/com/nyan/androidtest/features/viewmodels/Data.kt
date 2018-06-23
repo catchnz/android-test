@@ -1,4 +1,4 @@
-package com.nyan.androidtest.features.models
+package com.nyan.androidtest.features.viewmodels
 
 import com.nyan.androidtest.core.extension.empty
 

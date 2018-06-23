@@ -1,4 +1,4 @@
-package com.nyan.androidtest.features.models
+package com.nyan.androidtest.features.ui
 
 import android.os.Parcel
 import com.nyan.androidtest.core.platform.KParcelable

@@ -1,4 +1,4 @@
-package com.nyan.androidtest.features
+package com.nyan.androidtest.features.domain
 
 import retrofit2.Retrofit
 import javax.inject.Inject

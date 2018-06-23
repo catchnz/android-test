@@ -1,7 +1,8 @@
-package com.nyan.androidtest.features
+package com.nyan.androidtest.features.domain
 
 import com.nyan.androidtest.core.interactor.UseCase
-import com.nyan.androidtest.features.models.Data
+import com.nyan.androidtest.features.viewmodels.Data
+import com.nyan.androidtest.features.domain.repository.DataRepository
 import javax.inject.Inject
 
 class GetData

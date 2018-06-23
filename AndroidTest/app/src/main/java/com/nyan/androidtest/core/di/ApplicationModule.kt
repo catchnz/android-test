@@ -1,10 +1,10 @@
-package com.nyan.androidtest.core.di.viewmodel
+package com.nyan.androidtest.core.di
 
 import android.content.Context
 import dagger.Module
 import com.nyan.androidtest.AndroidApplication
 import com.nyan.androidtest.BuildConfig
-import com.nyan.androidtest.features.DataRepository
+import com.nyan.androidtest.features.domain.repository.DataRepository
 import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

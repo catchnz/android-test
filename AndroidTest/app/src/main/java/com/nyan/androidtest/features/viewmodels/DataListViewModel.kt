@@ -1,11 +1,10 @@
-package com.nyan.androidtest.features
+package com.nyan.androidtest.features.viewmodels
 
 import android.arch.lifecycle.MutableLiveData
 import com.nyan.androidtest.core.interactor.UseCase
 import com.nyan.androidtest.core.platform.BaseViewModel
-import com.nyan.androidtest.features.models.Data
-import com.nyan.androidtest.features.models.DataEntity
-import com.nyan.androidtest.features.models.DataView
+import com.nyan.androidtest.features.ui.DataView
+import com.nyan.androidtest.features.domain.GetData
 import javax.inject.Inject
 
 class DataListViewModel
