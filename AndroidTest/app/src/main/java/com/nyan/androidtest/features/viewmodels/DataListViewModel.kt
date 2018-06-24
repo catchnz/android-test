@@ -13,7 +13,6 @@ class DataListViewModel
 
     fun loadData() {
         getData.execute({ it.either(::handleFailure, ::handleDataList) }, UseCase.None())
-
     }
 
     private fun handleDataList(dataList: List<Data>) {

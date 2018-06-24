@@ -11,10 +11,12 @@ class DetailActivity : BaseActivity() {
 
     companion object {
         private const val INTENT_EXTRA_PARAM_DATA = "INTENT_EXTRA_PARAM_DATA"
-        fun callingIntent(context: Context, dataView: DataView): Intent {
+
+
+        fun open(context: Context, dataView: DataView) {
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra(INTENT_EXTRA_PARAM_DATA, dataView)
-            return intent
+            context.startActivity(intent)
         }
     }
 

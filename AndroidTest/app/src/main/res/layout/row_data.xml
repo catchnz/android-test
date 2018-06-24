@@ -12,20 +12,20 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_weight="1"
-        android:drawableRight="@drawable/ic_right"
 
         android:maxLines="1"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="17sp" />
 
-    <!--<TextView
+    <TextView
         android:id="@+id/tvSubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:drawableRight="@drawable/ic_right"
         android:gravity="center_vertical"
         android:text="Sub Title"
-        android:textColor="@color/grey" />-->
+        android:textColor="@color/grey" />
 
 </LinearLayout>

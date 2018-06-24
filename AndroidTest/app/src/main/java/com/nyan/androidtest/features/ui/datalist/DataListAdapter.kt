@@ -27,6 +27,7 @@ class DataListAdapter
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(dataView: DataView, clickListener: (DataView) -> Unit) {
             itemView.tvTitle.text = dataView.title
+            itemView.tvSubTitle.text = dataView.subTitle
             itemView.setOnClickListener { clickListener(dataView) }
 
         }
