@@ -70,6 +70,8 @@ dependencies {
     androidTestImplementation acceptanceTestDependencies.testRules
     androidTestImplementation acceptanceTestDependencies.espressoCore
     androidTestImplementation acceptanceTestDependencies.espressoIntents
+    androidTestImplementation acceptanceTestDependencies.espressocontrib
+
     androidTestImplementation acceptanceTestDependencies.androidAnnotations
 
     //Development dependencies

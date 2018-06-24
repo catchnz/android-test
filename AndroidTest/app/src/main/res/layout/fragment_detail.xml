@@ -11,12 +11,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
         android:scrollbars="none">
 
         <TextView
             android:layout_width="match_parent"
             android:textSize="17sp"
+            android:padding="16dp"
             android:layout_height="match_parent"
             android:text="@{dataView.content}" />
     </ScrollView>

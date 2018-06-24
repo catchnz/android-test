@@ -61,9 +61,9 @@ class DataListFragment : BaseFragment() {
     }
 
     private fun setupRecyclerView() {
-        recyclerView.layoutManager = LinearLayoutManager(activity!!)
-        recyclerView.adapter = dataListAdapter
-        recyclerView.addItemDecoration(SimpleDividerItemDecoration(activity!!));
+        rvData.layoutManager = LinearLayoutManager(activity!!)
+        rvData.adapter = dataListAdapter
+        rvData.addItemDecoration(SimpleDividerItemDecoration(activity!!));
         dataListAdapter.clickListener = { data ->
             DetailActivity.open(activity!!, data)
         }

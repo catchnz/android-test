@@ -96,6 +96,7 @@ ext {
             testRules:          "com.android.support.test:rules:$runner_version",
             espressoCore:       "com.android.support.test.espresso:espresso-core:$espresso_version",
             espressoIntents:    "com.android.support.test.espresso:espresso-intents:$espresso_version",
+            espressocontrib:    "com.android.support.test.espresso:espresso-contrib:$espresso_version",
             androidAnnotations: "com.android.support:support-annotations:$appCompat_version",
     ]
 
