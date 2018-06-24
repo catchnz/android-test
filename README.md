@@ -1,22 +1,11 @@
 # Android Developer Test
+This is my solution for Android Developer Test. It is certaily over engineered so that I can show What I am capable of :).
+The architecture is based on https://github.com/android10/Android-CleanArchitecture-Kotlin which use very nice idea of multi-layed architecture with
+MVVM and LiveData. since this is written in Kotlin, we can use it's features like coroutines, functional programmings, wierd syntax in mockito.
 
-A simple test for Android Developers
+I was initially using SwipeRefreshLayout for pull to refresh behavior, but decided to use recyclerrefreshlayout to be similar to design spec.
 
-## Instructions
+I spent friday night and saturday for development and sunday afternoon to finish unit testing.
 
-1. Fork or clone this repo
-2. Create an Android project
-3. Use the design located in the design folder
-4. Make the app load the json file remotely from this repo (i.e. `https://raw.githubusercontent.com/catchnz/android-test/master/data/data.json`) as per the design
-5. Display the data as per the design
-6. Create a pull request or email us at dev@catch.co.nz
-
-### Guidelines
-
-1. Your repo needs to include at minimum anything required to get the app working.  Detailed instructions should be provided in the `README.md` file to setup and run the app.
-2. Let us know how long you spent on it
-
-### Bonus Points
-
-* Consume dependencies with tools like Maven
-* Unit tests
+When you lunch the application, you will see 'catch' logo only, you need to do pulltorefresh to load the data from server.
+ 
