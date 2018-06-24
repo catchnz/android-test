@@ -47,5 +47,21 @@ class DataListActivityTest {
         Intents.intended(IntentMatchers.hasComponent(DetailActivity::class.java.name))
     }
 
+    @Test
+    fun multiplePullShouldHaveExactCountBeforeAndAfter() {
+        val intent = Intent()
+        repositoriesActivityRule.launchActivity(intent)
+        Espresso.onView(ViewMatchers.withId(R.id.swipeToRefresh)).perform(swipeDown());
+        val firstCount = getRVcount()
 
+        Espresso.onView(ViewMatchers.withId(R.id.swipeToRefresh)).perform(swipeDown());
+        val secondCount = getRVcount()
+        assertEquals(firstCount, secondCount)
+    }
+
+
+    private fun getRVcount(): Int {
+        val recyclerView = repositoriesActivityRule.getActivity().findViewById(R.id.rvData) as RecyclerView
+        return recyclerView.adapter.itemCount
+    }
 }

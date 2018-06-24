@@ -97,7 +97,6 @@ class DataRepositoryTest : UnitTest() {
     @Test
     fun `should return server error if response if false`(){
         given(networkHandler.isConnected).willReturn(true)
-        given(dataResponse.isSuccessful).willReturn(false)
 
         val data = repository.getData()
         data shouldBeInstanceOf Either::class.java

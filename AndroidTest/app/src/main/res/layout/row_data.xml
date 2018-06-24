@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/grey_background_t"
+    android:foreground="?attr/selectableItemBackground"
     android:orientation="horizontal"
     android:padding="15dp">
 
