@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.vsossella.mvvmapp.ui.book.model.Book" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/item_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cell_height"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.title}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/default_bigger_text_size"
+            android:textStyle="bold"
+            tools:text="Grêmio" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.subtitle}"
+            android:textSize="@dimen/default_small_text_size"
+            tools:text="Porto Alegre" />
+
+    </LinearLayout>
+
+</layout>
+
